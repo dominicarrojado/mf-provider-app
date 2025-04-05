@@ -18,9 +18,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "baseUrl": ".",
     "paths": {
-      "*": ["./@mf-types/*"]
-    }
+      "*": ["./@mf-types/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/static/*": ["./src/static/*"]
+    },
+
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["src"]
 }

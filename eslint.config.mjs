@@ -27,5 +27,5 @@ export default [
       ...reactHooks.configs.recommended.rules,
     },
   },
-  { ignores: ['dist/', 'tests/__mocks__'] },
+  { ignores: ['dist/', 'src/__mocks__'] },
 ];

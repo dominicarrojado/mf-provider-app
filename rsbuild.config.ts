@@ -1,3 +1,4 @@
+import path from 'node:path';
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginModuleFederation } from '@module-federation/rsbuild-plugin';
@@ -10,5 +11,11 @@ export default defineConfig({
   },
   output: {
     assetPrefix: '/mf-provider-app/',
+  },
+  source: {
+    exclude: [
+      path.resolve(__dirname, 'src/__tests__'),
+      path.resolve(__dirname, 'src/__mocks__'),
+    ],
   },
 });
