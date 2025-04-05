@@ -1,3 +1,11 @@
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/500-italic.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/600-italic.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/400-italic.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/500-italic.css';
 import './App.css';
 
 const App: React.FC = () => {
@@ -10,7 +18,9 @@ const App: React.FC = () => {
           className="h-[164px] w-auto"
         />
       </div>
-      <h1 className="mb-5 text-5xl text-white">Hello Module Federation 2.0</h1>
+      <h1 className="font-poppins mb-5 text-5xl font-semibold text-white">
+        Hello Module Federation 2.0
+      </h1>
     </div>
   );
 };
