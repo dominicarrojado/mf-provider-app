@@ -12,7 +12,7 @@ function SidePanel({ open }: Props) {
   const close = useClose();
 
   return (
-    <PopoverPanel static>
+    <PopoverPanel static modal>
       <AnimatePresence>
         {open && (
           <>
