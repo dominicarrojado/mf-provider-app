@@ -1,32 +1,33 @@
+import { Button as HeadlessButton } from '@headlessui/react';
 import { cn } from '@/lib/utils';
-import { HTMLProps } from 'react';
+import { forwardRef, type ButtonHTMLAttributes } from 'react';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'outline' | 'light';
+}
 
-const buttonVariants = {
-  outline:
-    'border-[#505050] text-[#505050] hover:bg-gray-200 active:bg-[#505050] active:text-white',
-  light: 'bg-white text-[#007C80] py-[7px] border-white',
-};
-
-type ButtonProps = HTMLProps<HTMLButtonElement> & {
-  variant?: keyof typeof buttonVariants;
-};
-
-function Button(props: ButtonProps) {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { children, className, variant = 'outline', ...otherProps } = props;
 
   return (
-    <button
+    <HeadlessButton
       {...otherProps}
-      type="button"
+      ref={ref}
       className={cn(
-        'inline-block cursor-pointer rounded-[8px] border-[1px] px-[16px] py-[3px] font-medium',
-        buttonVariants[variant],
+        'inline-block cursor-pointer rounded-[8px] px-[16px] py-[3px] text-[14px] leading-[24px] font-medium transition-colors',
+        {
+          'border border-[#505050] bg-white text-[#505050] hover:bg-[#F2F2F2] active:bg-[#E6E6E6]':
+            variant === 'outline',
+          'border border-white bg-white py-[7px] text-[#007C80] hover:bg-[#F2F2F2] hover:text-[#006C70] active:bg-[#E6E6E6] active:text-[#005C60]':
+            variant === 'light',
+        },
         className
       )}
     >
       {children}
-    </button>
+    </HeadlessButton>
   );
-}
+});
+
+Button.displayName = 'Button';
 
 export default Button;
