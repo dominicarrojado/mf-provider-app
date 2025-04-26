@@ -1,12 +1,13 @@
 import { HTMLProps } from 'react';
-import { cn } from '@/lib/utils';
 import brandLogo from '@/static/logos/propertyguru-finance.svg?inline';
+import { cn } from '@/lib/utils';
+import { BRAND_URL } from '@/lib/constants';
 
 function PageHeaderBrand(props: HTMLProps<HTMLAnchorElement>) {
-  const { children, ...otherProps } = props;
+  const { children } = props;
 
   return (
-    <a {...otherProps}>
+    <a href={BRAND_URL}>
       <img
         src={brandLogo}
         alt="PropertyGuru Finance"

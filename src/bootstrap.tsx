@@ -8,7 +8,7 @@ if (rootEl) {
   const root = ReactDOM.createRoot(rootEl);
   root.render(
     <React.StrictMode>
-      <App brandAnchor={{ href: import.meta.env.BASE_URL }} />
+      <App />
     </React.StrictMode>
   );
 }
