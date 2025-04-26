@@ -1,10 +1,13 @@
 import { cn } from '@/lib/utils';
+import { PageHeaderProps } from '@/lib/types';
 import PageHeaderBrand from './PageHeaderBrand';
 import PageHeaderMenuToggle from './PageHeaderMenuToggle';
 import PageHeaderNav from './PageHeaderNav';
 import PageHeaderButtons from './PageHeaderButtons';
 
-function PageHeader() {
+function PageHeader(props: PageHeaderProps) {
+  const { brandAnchor } = props;
+
   return (
     <div
       className={cn(
@@ -13,7 +16,7 @@ function PageHeader() {
       )}
     >
       <PageHeaderMenuToggle />
-      <PageHeaderBrand />
+      <PageHeaderBrand {...brandAnchor} />
       <PageHeaderNav />
       <PageHeaderButtons />
     </div>

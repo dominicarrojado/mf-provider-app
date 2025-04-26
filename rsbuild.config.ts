@@ -8,6 +8,8 @@ export default defineConfig({
   plugins: [pluginReact(), pluginModuleFederation(moduleFederationConfig)],
   server: {
     port: 3001,
+    base:
+      process.env.NODE_ENV === 'production' ? '/mf-provider-app/' : undefined,
   },
   output: {
     assetPrefix: '/mf-provider-app/',

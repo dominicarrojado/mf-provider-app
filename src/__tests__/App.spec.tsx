@@ -3,7 +3,7 @@ import App from '../App';
 
 describe('App', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<App />);
+    const { baseElement } = render(<App brandAnchor={{ href: '/' }} />);
 
     expect(baseElement).toBeInTheDocument();
   });

@@ -9,12 +9,4 @@ import '@fontsource/roboto/500-italic.css';
 import './App.css';
 import PageHeader from './components/PageHeader';
 
-const App: React.FC = () => {
-  return (
-    <>
-      <PageHeader />
-    </>
-  );
-};
-
-export default App;
+export default PageHeader;
