@@ -1,1 +1,9 @@
 @import 'tailwindcss/preflight.css' layer(base);
+
+html {
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}

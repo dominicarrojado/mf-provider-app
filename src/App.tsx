@@ -9,4 +9,12 @@ import '@fontsource/roboto/500-italic.css';
 import './App.css';
 import PageHeader from './components/PageHeader';
 
-export default PageHeader;
+function App() {
+  return (
+    <div className="pgf-header">
+      <PageHeader />
+    </div>
+  );
+}
+
+export default App;
